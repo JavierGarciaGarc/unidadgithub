@@ -5,7 +5,7 @@ $(document).ready(function () {
 function iniciar() {
    var email = document.getElementById("floatingInput").value
    var pwd = document.getElementById("floatingPassword").value
-
+console.log(pwd)
    var myHeaders = new Headers();
    myHeaders.append("Content-Type", "application/json");
    
@@ -21,7 +21,7 @@ function iniciar() {
      redirect: 'follow'
    };
    
-   fetch("https://restlabingsoft-production.up.railway.app/api/auth/login", requestOptions)
+   fetch("https://restlabingsoft-production-0999.up.railway.app/api/auth/login", requestOptions)
      .then(response => response.json())
      .then(result => {
         console.log(result.token)
