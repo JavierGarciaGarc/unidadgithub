@@ -16,8 +16,6 @@ fetch("https://restlabingsoft-production-0999.up.railway.app/api/categorias", re
   .then(result => {
     result.categorias.forEach(element => {
 
-        console.log(result.categorias[j].nombre)
-        
         let categorias_previo=document.getElementById("contenedor_categorias").innerHTML;
         document.getElementById("contenedor_categorias").innerHTML=categorias_previo+crear_seccion(result);
         j++;
@@ -42,7 +40,6 @@ function crear_seccion(result){
 
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "Bearer "+catchedtoken);
-console.log(catchedtoken)
 var requestOptions = {
   method: 'GET',
   headers: myHeaders,
@@ -55,7 +52,6 @@ fetch("https://restlabingsoft-production-0999.up.railway.app/api/videos?limite=1
   .then(response => response.json())
   .then(result => {
     result.productos.forEach(element => {
-        console.log(result.productos[i])
 
         let html_previo=document.getElementById("contenedor_tarjetas_"+result.productos[i].categoria.nombre).innerHTML;
         
@@ -70,11 +66,8 @@ fetch("https://restlabingsoft-production-0999.up.railway.app/api/videos?limite=1
 function crear_tarjeta(result){
 
   obtenerurl=result.productos[i].url;
-  console.log(obtenerurl);
   stringurl=obtenerurl.toString();
-  console.log(stringurl);
   urlobtenida=stringurl.slice(-11);
-  console.log(urlobtenida);
     
     let tarjeta ="<div class=\"col-4\">"+
     "<div class=\"card shadow-sm\" onClick=window.open(\"https://youtube.com/watch?v="+urlobtenida+"\")>"+
