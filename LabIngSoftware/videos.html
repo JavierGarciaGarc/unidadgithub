@@ -13,7 +13,6 @@
 
  
 <link href="css/bootstrap.min.css" rel="stylesheet">
-
 <script src="js/getvideos.js"></script>
     <style>
       .bd-placeholder-img {
@@ -121,7 +120,7 @@
         <img src="img/icons8-video-100.svg" width="40" ></img>
         <strong>Laboratorios de Ingeniería de Software</strong>
       </a>
-      <button xmlns="index.html" onclick="location.href='index.html'" style="color: white;font: bold; background-color: rgba(94, 93, 93, 0.568); border-color: rgb(72, 40, 255) ; border-width: 3px; border-radius: 8px;">Cambiar cuenta</button>
+      <button xmlns="index.html" onclick="location.href='index.html'; sessionStorage.removeItem('token'); getvideos.catchedtoken=0; window.location.href=('videos.html');" style="color: white;font: bold; background-color: rgba(94, 93, 93, 0.568); border-color: rgb(72, 40, 255) ; border-width: 3px; border-radius: 8px;">Cambiar cuenta</button>
     </div>
   </div>
 </header>
